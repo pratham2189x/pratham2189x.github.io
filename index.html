@@ -37,7 +37,7 @@
   </style>
 </head>
 
-<body class="gradient-background">
+<body class="">
   <div class="flex items-center justify-center h-screen">
     <div class="flex flex-col items-center p-4">
       <img id="imageDisplay" src="./images/image1.gif" alt="Cute kitten with flowers" class="rounded-md h-[300px]"
@@ -52,7 +52,17 @@
           No
         </button>
       </div>
+
+      <!-- New Button Below Yayyy Text -->
+      <div id="newButton" class="hidden mt-4">
+        <a href="https://wa.me/9518752142?text=*Hey! Thanks for the invitation, I will gladly join you.*"
+          class="inline-flex items-center justify-center rounded-md text-lg font-medium px-6 py-3 bg-pink-500 text-white hover:bg-pink-600 transition">
+          Here's the Next Step!
+        </a>
+      </div>
+
     </div>
+
   </div>
 
   <script type="module">
@@ -62,6 +72,7 @@
     const imageDisplay = document.getElementById('imageDisplay');
     const valentineQuestion = document.getElementById('valentineQuestion');
     const responseButtons = document.getElementById('responseButtons');
+    const newButton = document.getElementById('newButton');
 
     let noClickCount = 0;
     let buttonHeight = 48; // Starting height in pixels
@@ -96,9 +107,14 @@
     yesButton.addEventListener('click', () => {
       imageDisplay.src = './images/image7.gif'; // Change to image7.gif
       valentineQuestion.textContent = "Yayyy!! :3"; // Change the question text
-      responseButtons.style.display = 'none'; // Hide both buttons
+      responseButtons.style.display = 'none';
+      // Hide both buttons
       confetti(); // Trigger confetti animation
+
+      // Show the new button
+      newButton.classList.remove('hidden');
     });
+
   </script>
 </body>
 
